@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block extrahead %}
+  <link href="https://mstdn.social/@littlelink_custom" rel="me" />
+{% endblock %}
+
+{% block content %}
+  {{ super() }}
+
+  {% if git_page_authors %}
+    <div class="md-source-date">
+      <small>
+          Authors: {{ git_page_authors | default('enable mkdocs-git-authors-plugin') }}
+      </small>
+    </div>
+  {% endif %}
+{% endblock %}
